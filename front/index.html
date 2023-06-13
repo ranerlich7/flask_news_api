@@ -79,6 +79,12 @@
         </form>
     </footer>
     <script>
+         function deleteArticle(articleID) {
+            console.log('delete student', articleID);
+            // debugger
+            axios.delete(`http://localhost:5000/delete_article/${articleID}`)
+        }
+
         axios.get('http://localhost:5000/article').then(res => {
             console.log(res.data);
             const articles = res.data
@@ -88,6 +94,7 @@
                     <div class="panel-body"><img src="${article.image}" class="img-responsive"
                             style="width:100%" alt="Image"></div>
                     <div class="panel-footer">${article.content}</div>
+                    <button class="btn btn-danger" onclick="deleteArticle(${article.id})">DELETE</button>
                 </div>
             </div>`).join('');
             articlerow.innerHTML = resultHTML;
