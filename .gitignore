@@ -1,2 +1,6 @@
 /venv
 /.vscode
+/__pycache__
+*.db
+/instance
+instance/news.db
