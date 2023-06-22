@@ -68,7 +68,15 @@ def create_article(id=-1):
 
 @app.route('/')
 def index():
-    return 'This is a back end service api. please use the endpoints: /article, /article/id'
+    return """
+    <h3>This is a back end News article api</h3>
+    <br> <h4>Endpoints you can use are: <h4>
+    <ul>
+    <br><li> /article (GET)</li>
+    <br> <li> /article/id (GET)</li>
+    <br> <li> /create_article (POST)</li>
+    <br> <li> /delete_article (DELETE)</li>
+    """
 
 @app.route('/delete_article/<int:id>', methods=['DELETE'])
 def delete_article(id):
