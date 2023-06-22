@@ -66,6 +66,9 @@ def create_article(id=-1):
         db.session.commit()
         return jsonify({'message': 'Article updated successfully'})
 
+@app.route('/')
+def index():
+    return 'This is a back end service api. please use the endpoints: /article, /article/id'
 
 @app.route('/delete_article/<int:id>', methods=['DELETE'])
 def delete_article(id):
