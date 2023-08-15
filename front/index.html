@@ -82,10 +82,11 @@
          function deleteArticle(articleID) {
             console.log('delete student', articleID);
             // debugger
-            axios.delete(`https://news-api-test-1.onrender.com/delete_article/${articleID}`)
+            axios.delete(`http://127.0.0.1:5000/delete_article/${articleID}`)
         }
 
-        axios.get('https://news-api-test-1.onrender.com//article').then(res => {
+        // axios.get('https://news-api-test-1.onrender.com//article').then(res => {
+        axios.get('http://127.0.0.1:5000/article').then(res => {
             console.log(res.data);
             const articles = res.data
             const resultHTML = articles.map(article => `<div class="col-sm-4">
